@@ -12,6 +12,8 @@ body {
   grid-template-columns: repeat(12, 1fr);
   grid-auto-rows: minmax(100px, auto);
   grid-gap: 10px;
+  /* we need to set relative to absolute position the grid  */
+  position: relative;
   /* align-items: flex-start; */
   /* justify-items: end; */
 }
@@ -42,4 +44,28 @@ nav {
 }
 footer {
   grid-column: 1 / 13;
+}
+
+#grid {
+  display: grid;
+  position: absolute;
+  top: 0;
+  left: 0;
+  grid-template-columns: repeat(12, 1fr);
+  grid-auto-rows: minmax(100%, auto);
+  width: 100%;
+  height: 100%;
+  background-color: transparent;
+  padding: 0;
+  display: none;
+}
+#grid p {
+  border: 1px solid;
+  background: rgb(119, 119, 119);
+  margin: 0;
+  opacity: 0.4;
+}
+
+input:checked + #content #grid {
+  display: grid;
 }
